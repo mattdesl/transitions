@@ -2,8 +2,8 @@ module.exports = function(Promise) {
 	var promise = function(func, view, opt) {
 		var p
 		if (typeof view[func] === 'function') {
-			p = view[func](opt)
-			// p = Promise.method(view[func].bind(view))(opt)
+			// p = view[func](opt)
+			p = Promise.method(view[func].bind(view))(opt)
 		} else
 			p = Promise.resolve(opt)
 		return p
