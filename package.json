@@ -1,0 +1,40 @@
+{
+  "name": "transitions",
+  "version": "1.0.0",
+  "description": "promise-based transition util",
+  "main": "bluebird.js",
+  "license": "MIT",
+  "author": {
+    "name": "Matt DesLauriers",
+    "email": "dave.des@gmail.com",
+    "url": "https://github.com/mattdesl"
+  },
+  "dependencies": {
+    "bluebird": "^0.11.6"
+  },
+  "devDependencies": {
+    "tape": "^3.0.0"
+  },
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "transition",
+    "animate",
+    "animation",
+    "animated",
+    "animatable",
+    "transitions",
+    "css",
+    "promise",
+    "promises"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mattdesl/transitions.git"
+  },
+  "homepage": "https://github.com/mattdesl/transitions",
+  "bugs": {
+    "url": "https://github.com/mattdesl/transitions/issues"
+  }
+}
