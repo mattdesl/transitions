@@ -1,12 +1,13 @@
 module.exports = function(Promise) {
-	var promise = Promise.method(function(func, view, opt) {
+	var promise = function(func, view, opt) {
 		var p
-		if (typeof view[func] === 'function')
+		if (typeof view[func] === 'function') {
 			p = view[func](opt)
-		else
+			// p = Promise.method(view[func].bind(view))(opt)
+		} else
 			p = Promise.resolve(opt)
 		return p
-	})
+	}
 
 	function transition(view, opt) {
 		return {
