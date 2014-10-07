@@ -1,6 +1,6 @@
 {
   "name": "transitions",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "promise-based transition util",
   "main": "bluebird.js",
   "license": "MIT",
