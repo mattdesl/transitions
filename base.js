@@ -44,5 +44,24 @@ module.exports = function(Promise) {
 		}
 	}
 
+
+	function promisify(func, view) {
+		if (typeof view[func] === 'function') {
+			return Promise.promisify(view[func])
+		}
+		return Promise.resolve
+	}
+
+	//promisify a node-style "view" object
+	// transition.promisify = function(view) {
+	// 	return {
+	// 		view: view,
+	// 		create: promisify.bind(null, 'create', view),
+	// 		dispose: promisify.bind(null, 'dispose', view),
+	// 		show: promisify.bind(null, 'show', view),
+	// 		hide: promisify.bind(null, 'hide', view)
+	// 	}
+	// }
+
 	return transition
 }
