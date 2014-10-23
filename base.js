@@ -1,9 +1,22 @@
+var isPromise = require('is-promise')
+
 module.exports = function(Promise) {
+	function wrap(fn) {
+	    if (typeof fn !== "function") {
+	        throw new TypeError("fn must be a function")
+	    }
+	    return function Promise_method() {
+	        var value = fn.apply(this, Array.prototype.slice.call(arguments,0))
+	        if (isPromise(value))
+	            return value
+	        return Promise.resolve(value)
+	    }
+	}
+
 	var promise = function(func, view, opt) {
 		var p
 		if (typeof view[func] === 'function') {
-			// p = view[func](opt)
-			p = Promise.method(view[func].bind(view))(opt)
+			p = wrap(view[func].bind(view))(opt)
 		} else
 			p = Promise.resolve(opt)
 		return p

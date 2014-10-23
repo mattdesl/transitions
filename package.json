@@ -10,7 +10,8 @@
     "url": "https://github.com/mattdesl"
   },
   "dependencies": {
-    "bluebird": "^2.3.6"
+    "bluebird": "^2.3.6",
+    "is-promise": "^1.0.1"
   },
   "devDependencies": {
     "tape": "^3.0.0"
